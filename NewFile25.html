@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+	var date = new Date(2022,06,02);
+	var Y = date.getFullYear();
+	var M = date.getMonth()+1;
+	var d =date.getDate();
+	var dow = ["일요일","월요일","화요일","수요일","목요일","금요일","토요일"]//요일의 배열
+	var select_dow = date.getDay();//요일 선택자 (0- 일요일, 1-월요일.....6,토요일)
+	
+	var write=Y+'년 '+M+'월 '+d+'일 ';
+	
+	if (select_dow==0)
+		write +="<span style='color:red;'>"+dow[select_dow]+"</span>"
+	else if(select_dow==6)
+		write +="<span style='color:blue'>"+dow[select_dow]+"</span>"
+	else
+		write +="<span>"+dow[select_dow]+"</span>"
+	
+	document.write(write);
+	</script>
+</body>
+</html>

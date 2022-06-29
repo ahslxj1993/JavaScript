@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>confirm : [확인][취소]버튼이 있는 대화상자</title>
+</head>
+<body>
+<script>
+var answer = confirm("장바구니로 이동할까요?")
+var list = "Answer = "+answer+"<br>";
+
+if(answer){
+	list += "<img src='add_cart.png' >";
+}else{
+	document.body.style.backgroundColor = 'yellow';
+	}
+	
+	document.body.innerHTML = list;
+</script>
+
+</body>
+</html>
