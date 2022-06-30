@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 
+함수는 코드의 집합을 나타내는 자료형이다
+	-함수는 리턴타입이 없다
+	-파라미터에 var를 붙이지않는다
+	-함수의 형식
+	
+	1.함수 표현식
+	 - 익명함수 : 함수의 이름이 없는 함수(호출 전에 반드시 함수를 표현해야 합니다)
+	 	var 변수 = function(){코드들}
+	 - 익명함수 호출 방법 : 함수의 자료형 변수 바로뒤에 ()를 붙여준다.
+	 					변수();
+	
+	
+	2. 함수 선언식
+		function 함수이름 (args1, args2, ....){
+									자바스크립트 코드.....			
+									return문;										
+		}
+ -->
+ 
+<script>
+//함수표현(Function Experession) :함수 리터럴로 특정변수에 할당되거나
+//								즉시 실행가능한 코드블럭으로서 존재하는 함수를 의미하는것
+//함수의 이름이 없기때문에 익명함수라고 한다
+//anonymous function expression
+
+functionVar()
+
+var functionVar = function (){
+	var output = prompt ('숫자를 입력하세요','숫자');
+	alert('입력한숫자 : '+output);
+}
+
+//functionVar 의 자료형 확인하고 내용확인
+document.write("typeof(functionVar) : "+typeof(functionVar)+"<br>"+functionVar);
+
+//함수자료형 변수명 뒤에 소괄호를 열고 닫으면 함수를 실행하게 된다.
+//이를 "함수를 호출한다" 라고 한다
+
+
+//즉시 실행
+(function (){
+	alert("즉시 실행합니다.");
+}) ();
+
+
+</script> 
+</head>
+<body>
+
+</body>
+</html>

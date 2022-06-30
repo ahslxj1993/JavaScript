@@ -15,14 +15,16 @@
 	
 	var write=Y+'년 '+M+'월 '+d+'일 ';
 	
+	var color ='black';
 	if (select_dow==0)
-		write +="<span style='color:red;'>"+dow[select_dow]+"</span>"
-	else if(select_dow==6)
-		write +="<span style='color:blue'>"+dow[select_dow]+"</span>"
-	else
-		write +="<span>"+dow[select_dow]+"</span>"
+		color='red';
+	else if (select_dow==6)
+		color='blue'
+		
+	var pstyle='<span style="font-weight:bold;color:'+color+'">';
+	write +=pstyle+dow[select_dow]+'</span>';
 	
-	document.write(write);
+	document.write(write+'<br>');
 	</script>
 </body>
 </html>

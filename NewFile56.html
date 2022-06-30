@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+	function showTime(){
+	var date = new Date();
+	var Y = date.getFullYear();
+	var M = date.getMonth()+1;
+	var d =date.getDate();
+	var h =date.getHours();
+	var m = date.getMinutes();
+	var s = date.getSeconds();
+	
+	document.body.innerHTML=Y+"년 "+M+"월 "+d+"일 "+h+":"+m+":"+s;
+	}
+	
+	setInterval(showTime,1000);
+
+</script>
+</body>
+</html>

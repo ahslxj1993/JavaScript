@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+var saram = {
+		'name' : '나최고',
+		"age" : 25,
+		ki : 170.2,
+		blood : 'A',
+		adress : '서울시 강남구',
+		print : function(){
+			var list="";
+			for (var p in saram){
+				if (p!='print')
+				 list += p+':'+saram[p]+'<br>';
+			}
+			
+			list+='<hr>';
+			document.body.innerHTML = list;
+		}
+};
+
+saram.print();
+
+saram.age=saram.age-10;
+saram.print();
+
+</script>
+</body>
+</html>

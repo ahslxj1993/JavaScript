@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 함수를 리턴하는 함수 -->
+
+<script>
+ function returnFunction(){
+	 return function(){
+		 alert('Hello Function..!');
+	 };
+ }
+ 
+ //방법1
+ var result = returnFunction();
+ document.write(result);
+ result();
+ 
+ //방법2
+ returnFunction()();
+ //returnFunction() 함수를 호출하면 함수가 리턴됩니다
+ //리턴된 함수를 호출하기 위해 ()를 한번 더 사용합니다
+ 
+ //방법3 : 즉시실행 함수
+ (function() {
+	 return function (){
+		 alerty('Hello Function 즉시..!');
+	 };
+ })()();
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 
+지역변수 output은 함수 test() 함수를 호출할때 생성됩니다.
+변수 output 은 지역변수 이므로 함수가 종료될때 사라져야 합니다
+그러나 해당변수가 이후에도 활용될 가능성이 있으므로 자바스크립트는
+변수를 제거하지 않고 남겨둡니다
+이런 현상을 클로저라고 부릅니다
+또는 리턴된 함수 자체를 클로저라고 부르기도합니다
+ -->
+
+<script>
+//함수를 선언
+function test(name){
+	var output = "Hello "+name +"..!";
+	return function (){
+		alert(output)
+	}
+}
+
+test('자바스크립트')();
+
+//출력합니다
+alert(output); //오류발생 : output is not defined
+</script>
+</head>
+<body>
+
+</body>
+</html>
