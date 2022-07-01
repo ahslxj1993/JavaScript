@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>innerHTML속성</title>
+<style>
+table {text-align:center; width:500px; height:100px;}
+caption {color:#54BD54;font-weight:bolder}
+tr:nth-child(2n){background:#54BD54}
+th {background:gray; color: white}
+</style>
+</head>
+<body>
+	<p>저는 안보여요
+	Title1: 간단한 화면 출력
+	</p>
+	<!-- script가 body에 있는 경우에는 body에 접근할 수 있습니다.
+	document.body.innerHTML인 경우 기존에 body 내용을 삭제하고 덮어쓰기 때문에
+	처음에 나오는 p 태그는 나타나지 않습니다 -->
+<script>
+	var title ="대한민국 전국 맛집";
+	var title2="지적 대화를 위한 넓고 얕은 지식";
+	var title3 ="베스트셀러 절대로 읽지마라.";
+	
+	var list='';
+	
+	list+="<table>";
+	list+="<caption> 베스트셀러 </caption>";
+	list+="<tbody>";
+	list+="<tr>";
+	list+="<th>순위</th>";
+	list+="<th>제목</th>";
+	list+="</tr>";
+	list+= "<tr><td>1</td><td>"+title+"</td></tr>";
+	list+= "<tr><td>2</td><td>"+title2+"</td></tr>";
+	list+= "<tr><td>3</td><td>"+title3+"</td></tr>";
+	list+="</tbody>";
+	list+="</table>";
+	
+	document.body.innerHTML = list;
+</script>
+
+<p>Title2: 간단한 화면출력</p>
+</body>
+</html>
