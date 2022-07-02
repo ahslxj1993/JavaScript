@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>INDEX</title>
+<!-- 
+문서객체 가져오기 (2)
+1. getElementsByName(namevalue)
+	태그의 name 속성이 namevalue와 일치하는 문서 객체를 배열로 가져옵니다
+	
+2.getElementsByTagName(tagname)
+	태그 이름이 tagName과 일치하는 모든 태그의 문서객체를 배열로 가져옵니다
+	
+3.getElementsByClassName(classname)
+	클래스 속성이 classname 과 일치하는 문서 객체를 배열로 가져옵니다.
+	
+4.querySelector(selector)
+	selector와 일치하는 첫번째 문서객체를 가져옵니다
+	
+5.querySelectorAll(selector)
+	selector와 일치하는 모든 문서객체를 배열로 가져옵니다.
+ -->
+<script>
+window.onclick = function (){
+	//문서 객체를 가져옵니다
+	var headers = document.getElementsByTagName('h1');
+	console.log("h1 문서 객체의 개수 : "+headers.length)
+	
+	//문서 객체의 속성을 변경합니다
+	headers[0].innerHTML = 'headers[0] - with getElementsByTagName() :  햇살이';
+	headers[1].innerHTML = 'headers[1] - with getElementsByTagName() :  좋아요';
+	
+	var input = document.getElementsByName('age');
+	input[0].value = '24살 입니다';
+	input[0].style.color = 'green';
+	input[1].focus();//두번째 input에 포커스를 줍니다
+	input[1].style.background='orange';
+}
+</script>
+</head>
+<body>
+	<h1 id='header-1'>윈도우 클릭시 변경됩니다</h1>
+	<h1 id='header-2'>윈도우 클릭시 변경됩니다</h1>
+	
+	<input type='text' name='age' value='1'>
+	<input type='text' name='age' value='2'>
+</body>
+</html>

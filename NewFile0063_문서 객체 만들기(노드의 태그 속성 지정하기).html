@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문서 객체 만들기 (2)</title>
+<!--
+문서 객체 만들기 (2)
+속성 지정하는 방법 예 - 웹 브라우저가 지원하는 태그의 속성 지정하는 방법
+ -->
+<script>
+	window.onload = function(){
+		//변수 선언
+		var img = document.createElement('img');
+		img.src = 'Penguins.jpg';
+		img.width = 300;
+		img.height = 330;
+		img.onclick =  function(){
+			alert("이미지 경로는 ["+this.src+"] 입니다.")
+		}
+		
+		//노드 연결
+		document.body.appendChild(img);
+		
+		var img2 = document.createElement('img');
+		img2.src = 'Chrysanthemum.jpg';
+		img2.width = 300;
+		img2.height = 330;
+		document.body.appendChild(img2);
+		
+	};
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+
+!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+<script>
+//생성자 함수 - 함수를 이용해서 객체를 생성해내는 생성자를 구현하는 부분
+function Saram(name_value, age_value, ki_value, blood_value, address_value){
+	//객체에 속성을 추가하고 값을 설정하는 부분
+	//생성자 함수를 작성할때 함수 객체 자신을 지칭하는 키워드로 this를 사용한다
+	this.name = name_value;
+	this.age = age_value;
+	this.ki = ki_value;
+	this.blood = blood_value;
+	this.address = address_value;
+	
+	//그 객체는 속성과 메소드를 가질수 있으며 객체의 속성값으로 함수를 저장할수 있디
+	//그 함수는 객체에 소속되고 그 객체의 메소드가 되는것이다
+	this.display =function (){
+		document.write("<table border='1'>");
+		document.write("<caption>신상정보</caption>");
+		document.write("<tr><th>항목 (속성: property)</th>");
+		document.write("<th>내용 (값: value)</th></tr>");
+		
+		for (var p in this){
+			if (p!= "display"){
+				document.write("<tr>");
+				document.write("<td>saram."+p+"</td>");
+				document.write("<td>"+this[p]);
+				if (p == 'age')
+					document.write("세");
+				if (p=='ki')
+					document.write("cm");
+				if (p=='blood')
+					document.write("형");
+				
+				document.write("</td></tr>");
+			}
+		}
+		
+		document.write('</table>')
+	}
+}
+
+//자바스크립트는 함수를 만들면 prototype 속성을 제공합니다
+//prototype 속성을 통해 속성 및 메서드를 추가할수 있고
+//함수 생성자를 통해 만들어진 객체는 prototype속성을 통해 추가된 속성과 메서드를 모두 공유할수 있습니다
+Saram.prototype.ban='L2반';
+console.log(Saram.prototype.ban)
+
+Saram.prototype.commonMethod = function(){
+	console.log("공통된 메서드입니다")
+}
+
+Saram.prototype.commonMethod();
+
+//생성자 함수를 이용한 객체생성
+var na = new Saram('나최고',25,170.2,'A','서울시 강남구');
+na.display();
+console.log("na.ban="+na.ban)
+na.commonMethod();
+
+var you = new Saram('너최고',35,180,'B','서울시 종로구');
+you.display()
+console.log("you.ban="+you.ban)
+you.commonMethod();
+</script>
+</html>

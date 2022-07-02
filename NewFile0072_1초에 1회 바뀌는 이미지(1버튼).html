@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>INDEX</title>
+<style>
+button {
+width: 100px;
+height : 30px;
+background-color:green;
+color : white;
+border:none;}
+
+button:hover{
+opacity:0.7;
+cursor:pointer;
+}
+</style>
+</head>
+<body>
+	1초에 한번씩 바뀝니다
+	<br>
+	<img src="img/koala.jpg" id="flower" width="500px" height="500px"><br>
+	<button id='stop'>STOP</button>
+	<script>
+		var changeflower = document.getElementById("flower");
+		
+		var flowerlist = ['Jellyfish.jpg','Chrysanthemum.jpg',
+			'Hydrangeas.jpg', 'Penguins.jpg', 'Desert.jpg'];
+		
+		var count =0;
+		
+		function change (){
+			
+			var path = 'img/'+flowerlist[count%flowerlist.length];
+			count++;
+			
+			changeflower.src=path;
+			
+		};
+		
+		start = setInterval(change,1000);
+		
+		var stopButton = document.getElementById("stop");
+		
+		stopButton.onclick = function(){
+			clearInterval(start);
+		};
+		
+		
+</script>
+</body>
+
+</html>

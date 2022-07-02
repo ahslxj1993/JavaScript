@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>INDEX</title>
+<!-- 
+문서객체 가져오기 (1)
+getElementById(id): 태그의 id와 일치하는 문서 객체를 가져옵니다
+1.처음 로드시 start 버튼은 녹색, stop 버튼은 회식이며 비활성 상태(disabled)를 만듭니다
+2.start 버튼을 클릭하면 start 버튼은 회색이며 비활성화 되고, stop 버튼은 녹색입니다
+3.stop 버튼을 클릭하면 start 버튼은 녹색, stop 버튼은 회색이며 비활성 상태를 만듭니다
+ -->
+
+<style>
+button {
+width: 100px;
+height : 30px;
+background-color:green;
+color : white;
+border:none;}
+
+button:hover{
+opacity:0.7;
+cursor:pointer;
+}
+
+button:disabled{
+cursor: not-allowed;
+}
+
+</style>
+</head>
+<body>
+	start 버튼과 stop 버튼을 이용한 이미지 변경입니다
+	<br>
+	<img src="img/koala.jpg" id="flower" width="500px" height="500px"><br>
+	<button id='start'>START</button>
+	<button id='stop'>STOP</button>
+	<script>
+		var changeflower = document.getElementById("flower");
+		
+		var flowerlist = ['Jellyfish.jpg','Chrysanthemum.jpg',
+			'Hydrangeas.jpg', 'Penguins.jpg', 'Desert.jpg'];
+		
+		var count =0;
+		
+		function change (){
+			
+			var path = 'img/'+flowerlist[count%flowerlist.length];
+			count++;
+			
+			changeflower.src=path;
+			
+		};
+		
+		//버튼 문서 객체들을 가져옵니다
+		start = document.getElementById('start');
+		stop = document.getElementById('stop');
+		stop.disabled=true;//로드시 stop 버튼을 비활성화 합니다
+		//로드시 stop 버튼의 배경색을 회색으로 설정합니다
+		stop.style.backgroundColor='gray';
+		
+		start.onclick = function (){
+			startshow=setInterval(change,1000);
+			this.style.backgroundColor='gray';
+			stop.style.backgroundColor='green';
+			this.disabled=true;
+			stop.disabled=false;
+			
+		}
+		
+		stop.onclick = function (){
+			clearInterval(startshow);
+			this.style.backgroundColor='gray';
+			start.style.backgroundColor='green';
+			this.disabled=true;
+			start.disabled=false;
+		}
+		
+</script>
+</body>
+
+</html>

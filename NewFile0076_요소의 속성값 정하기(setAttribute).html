@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+.change{
+color:red;
+background:yellow;
+height:50px;
+font-size:20pt;
+}
+
+</style>
+<script>
+	window.onload = function() {
+		var inputName = document.getElementById("username");
+
+		inputName.onclick = function() {
+			alert(this.value);
+			newName = prompt('이름을 입력하세요');
+			this.value = newName;
+			this.setAttribute('class','change');
+		}
+	}
+</script>
+</head>
+<body>
+	이름 :
+	<input id="username" type="text" value="사용자의 이름 :L2">
+
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+	function showTime(){
+		var today = new Date();
+		document.body.innerHTML = today.toLocaleString();
+	}
+	
+	setInterval(showTime,1000);
+	/////////////////////////////////////////////
+	setInterval (function(){
+		var today = new Date();
+		document.body.innerHTML = today.toLocaleString();
+	}, 1000)
+</script>
+</body>
+</html>

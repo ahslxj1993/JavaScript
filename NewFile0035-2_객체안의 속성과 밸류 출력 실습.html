@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+table {
+	text-align: center;
+	border: gray solid 1px;
+	margin: 0 auto;
+	border-collapse: collapse
+}
+
+td, th {
+	border: gray solid 1px;
+	border-collapse: collapse
+}
+
+caption {
+	color: green;
+	font-weight: bolder;
+	font-size: 20pt
+}
+
+thead {
+	background: pink
+}
+</style>
+</head>
+<body>
+	<script>
+
+		var book = {
+			title : "수미네 반찬",
+			publisher : "성안당",
+			author : "김수미",
+			price : 15300,
+			info : {
+				pages : 442,
+				date : "2010년 1월 30일",
+				ISBN10 : "8970506470",
+				size : "188*243mm",
+
+			},
+
+		};
+
+		book.print = function() {
+			var list = "";
+			list += "<table>"
+			list += "<caption> 서적정보 </caption>"
+			list += "<thead>"
+			list += "<tr><th>항목(속성:property)</th><th>내용(값:value)</th></tr>"
+			list += "</thead>"
+			list += "<tbody>"
+			
+			for (var p in this){
+				if (p != 'print'){
+					if (typeof (this[p]) != 'object'){//book의 property들의 자료형이 object가 아닐때
+						list += "<tr><td>book."+p+"</td><td>"+this[p];
+					if (p=='price')
+						list +='원';
+					list += "</td></tr>"
+					} else {//book의 propery의 자료형이 object 일때 (info)
+						for (var q in this[p]){
+							list += "<tr><td>book."+p+"."+q+"</td><td>"+this[p][q];
+							if (q=='pages')
+								list+='페이지';
+							list +="</td></tr>"
+						}//for q
+					}//else
+				}//if (p != print)
+			}//for p
+			
+			list +="</tbody></table>"
+			
+			document.body.innerHTML = list
+		}
+		book.print();
+	</script>
+</body>
+</html>
+
+<!--  if (p == 'info'){
+							for (var q in 'info')
+								print+="<tr><td>"+q+"</td><td>"+book[info][q]+"</td></tr>"-->

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+table {
+	text-align: center;
+	border: gray solid 1px;
+	margin: 0 auto;
+	border-collapse: collapse
+}
+
+td, th {
+	border: gray solid 1px;
+	border-collapse: collapse
+}
+
+caption {
+	color: green;
+	font-weight: bolder;
+	font-size: 20pt
+}
+
+thead {
+	background: pink
+}
+</style>
+</head>
+<body>
+	<script>
+		var book = {
+			title : "수미네 반찬",
+			publisher : "성안당",
+			author : "김수미",
+			price : 15300,
+			info : {
+				pages : 442,
+				date : "2010년 1월 30일",
+				ISBN10 : "8970506470",
+				size : "188*243mm",
+			}
+		};
+
+		var print = "";
+		print += "<table>"
+		print += "<caption> 서적정보 </caption>"
+		print += "<thead>"
+		print += "<tr><th>항목(속성:property)</th><th>내용(값:value)</th></tr>"
+		print += "</thead>"
+		print += "<tbody>"
+		print += "<tr><td>book.title</td><td>"+book.title+"</td></tr>";
+		print += "<tr><td>book.publisher</td><td>"+book.publisher+"</td></tr>";
+		print += "<tr><td>book.author</td><td>"+book.author+"</td></tr>";
+		print += "<tr><td>book.price</td><td>"+book.price+"</td></tr>";
+		print += "<tr><td>book.info.pages</td><td>"+book.info.pages+"</td></tr>";
+		print += "<tr><td>book.info.date</td><td>"+book.info.date+"</td></tr>";
+		print += "<tr><td>book.info.ISBN10</td><td>"+book.info.ISBN10+"</td></tr>";
+		print += "<tr><td>book.info.size</td><td>"+book.info.size+"</td></tr>";
+		
+		print +="</tbody></table>"		
+		
+		document.write(print);
+	</script>
+</body>
+</html>

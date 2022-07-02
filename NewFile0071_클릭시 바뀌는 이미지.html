@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>INDEX</title>
+<script>
+	window.onload = function() {
+
+		var changeflower = document.getElementById("flower");
+		
+		var flowerlist = ['Jellyfish.jpg','Chrysanthemum.jpg',
+			'Hydrangeas.jpg', 'Penguins.jpg', 'Desert.jpg'];
+		
+		var count =0;
+		
+		changeflower.onclick = function(){
+			/*
+			var path = flowerlist[count%flowerlist.length];
+			count++
+			*/
+			var path = 'img/'+flowerlist[count%flowerlist.length];
+			count++;
+			//	count	0	1	2	3	4	5	6	7	8	9	10
+			//인덱스위치	0	1	2	3	4	0	1	2	3	4	0
+			this.src = path;
+		};
+	};
+</script>
+</head>
+<body>
+	이미지를 클릭하면 이미지가 바뀝니다.
+	<br>
+	<img src="img/koala.jpg" id="flower" width="500px" height="500px">
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!--
+return 키워드는 함수가 실행하는 도중에 함수를 호출한 곳으로 돌아가라는 의미이다
+return 키워드를 사용하면 값을 지정하지 않아도 함수를 호출한 곳으로 돌아간다
+-->
+
+<script>
+//함수선언
+function returnFunction(){
+	alert('sentence A');
+	return; // 아무 값도 리턴하지 않고 호출한 곳으로 돌아간다.
+}
+
+//함수호출
+var output = returnFunction();
+
+alert(typeof(output)+' : '+ output);
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
