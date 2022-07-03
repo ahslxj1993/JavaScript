@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<img src="img/koala.jpg" id='photo' width=500px height=500px>
+	
+	<script>
+	 var pic = document.getElementById('photo');
+	 
+	 function eventFunction(event){
+		 this.src="img/Hydrangeas.jpg"
+	 };
+	
+	pic.addEventListener('click',eventFunction)	 ;
+	
+	
+	</script>
+</body>
+</html>
