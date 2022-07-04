@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>navigator object - 웹 브라우저의 정보를 알아내기 위해 사용</title>
+</head>
+<body>
+<form>
+	<input type=button
+			value='Check Navigator appName(브라우저의 이름)'
+			onclick='document.getElementById("appName").value=navigator.appName;'>
+	
+	<br>
+	
+	<input id="appName" type="text" size="110"><br>
+	
+	<input type=button
+			value="Check Navigator appVersion(브라우저 버전)"
+			onclick="document.getElementById('appVersion').value=navigator.appVersion;">
+	<br>
+	
+	<input id="appVersion" type="text" size=110><br>
+	
+	<input type=button
+			value="Check UserAgent(브라우저의 정보(이름,버전,코드등)를 포함하는 문자열)"
+			onclick="document.getElementById('userAgent').value=navigator.userAgent;">
+	<br>
+	
+	<input id="userAgent" type="text" size=110><br>
+	
+
+</form>
+</body>
+</html>

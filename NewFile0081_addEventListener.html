@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
@@ -14,6 +14,18 @@
 		 this.src="img/Hydrangeas.jpg"
 	 };
 	
+	 /*
+	 1. 이벤트 리스너는 DOM 객체에서 이벤트가 발생할 경우 해당 이벤트 처리 핸들러를 추가할수 있는 오브젝트 입니다
+	 2. 이벤트가 발생하면 등록한 이벤트 처리 핸들러가 실행됩니다.
+	 3. W3C 표준 방법으로서 DOM 객체의 addEventListener()메소드로 이벤트 핸들러를 등록할수 있습니다
+	 	형식) addEventListener (type,function_name,useCapture)
+	 		(1) type: 이벤트 타입을 나타내는 문자열로 'click','load','keydown' 등등
+	 		(2) function_name : 이벤트 리스너로 등록할 함수 이름
+	 		(3) useCapture : true 이면 이벤트 흐름 중 캡쳐단계에서 실행될 리스너를 등록
+	 						 false 이면 버블 단계에서 실행될 리스너를 등록. 생략가능하면 디폴트는 false
+	 				예)addEventListener ('click',eventFunction)
+	 */
+	 
 	pic.addEventListener('click',eventFunction)	 ;
 	
 	

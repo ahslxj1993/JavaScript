@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+	<div>radio 버튼을 클릭하면 이미지가 바뀝니다</div>
+	<hr>
+	<form>
+		<label><input type='radio' name='icon' value='img/image1.png'>image1</label>
+		<label><input type='radio' name='icon' value='img/image2.png' checked>image2</label>
+		<label><input type='radio' name='icon' value='img/image3.png'>image3</label>
+		<img src="img/image2.png" id="iconImg">
+	</form>
+
+	<script>
+		var img = document.getElementById('iconImg');
+		var icons = document.getElementsByName('icon');
+		for (var i=0 ; i<icons.length; i++){
+			icons[i].addEventListener ('click',show);
+			}
+		
+		function show () {
+			for (var i=0 ; i<icons.length; i++){
+				if (icons[i].checked==true){
+				 img.src = icons[i].value;
+				//img.src 와 icons[i].value 순서가 바뀌면 동작을 안하는데 무슨 차이인지?
+				}
+			}
+			
+		}
+	</script>
+</body>
+</html>

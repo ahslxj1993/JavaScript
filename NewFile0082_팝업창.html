@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+/*
+  형식 : open(URL, name, option)
+  URL : 팝업창으로 보여줄 문서
+  name: 팝업창의 이름
+  option : 옵션
+  
+  	옵션 이름		설명						입력할수 있는 값
+  	width		새 윈도우 너비				픽셀 값
+  	height		새 윈도우 높이				픽셀 값
+  	menubar		메뉴 유무					yes , no
+  	status		상태 표시줄의 유무			yes, no
+  	resizable	화면 크기 조절 가능 유무		yes, no
+  	location	주소 입력창의 유무			yes, no
+  	left		스크린 상의 윈도우 x좌표		픽셀 값
+  	top			스크린 상의 윈도우 y좌표		픽셀 값
+ */
+
+window.status="하하 : 옵션 추가 합니다";
+  
+//변수 선언
+var child = window.open('NewFile0080_addEventListener.html',
+						'_blank',
+						'width=300, height=200, menubar=yes'+
+						'status=yes, rersizeable=yes, location=tes')
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Event Handling : 모든 브라우저 작동</title>
+
+<style>
+input {
+outline: none;
+box-sizing: border-box;
+width: 30px;
+height: 20px;
+}
+
+
+
+#op1:focus {border: 1px solid red}
+input:nth-child(2):focus {border: 1px solid green}
+
+#cal {width:25px}
+
+#result {
+ border : 2px solid orange
+}
+
+</style>
+</head>
+<body>
+	<input id='op1' type='text' size ='2'>+
+	<input id='op2' type='text' size='2'>
+	<input id='cal' type=button value='=' >
+	<input id='result' type='text' size='2'>
+	
+	<script>
+	
+	function add(){
+		var a = document.getElementById('op1').value;
+		var b = document.getElementById('op2').value;
+		
+		var c = document.getElementById('result');
+		
+		c.value = parseInt(a)+parseInt(b);
+		
+		c.style.backgroundColor = 'orange';
+	}
+	
+	var cal = document.getElementById('cal');
+	cal.addEventListener('click',add)
+</script>
+</body>
+</html>
